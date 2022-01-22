@@ -9,9 +9,16 @@ func main() {
 	plainText := "SISKAEEE"
 	builder := strings.Builder{}
 	result := concateString(plainText, builder)
-	builder.WriteString(fmt.Sprintf("the output result: %s", result))
+
+	// concate with strings.builder
+	builder.WriteString(fmt.Sprintf("the output result: %s\n", result))
 	msg := builder.String()
 	fmt.Println(msg)
+
+	// concate with fmt.sprintf
+	output := fmt.Sprintf("the output result: %s", result)
+	fmt.Println(output)
+
 }
 
 func concateString(plainText string, builder strings.Builder) (result string) {
