@@ -7,6 +7,11 @@ import (
 
 func main() {
 	plainText := "SISKAEEE"
+	result := concateString(plainText)
+	fmt.Println(result)
+}
+
+func concateString(plainText string) (result string) {
 	textMap := map[string][]string{}
 	for _, p := range plainText {
 		if _, exist := textMap[string(p)]; !exist {
@@ -21,6 +26,6 @@ func main() {
 		preOutput := fmt.Sprintf("%d%s", length, k)
 		joinStr = append(joinStr, preOutput)
 	}
-	fmt.Println(strings.Join(joinStr, ""))
-
+	result = strings.Join(joinStr, "")
+	return
 }
