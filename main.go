@@ -11,13 +11,14 @@ func main() {
 	result := concateString(plainText, builder)
 
 	// concate with strings.builder
-	builder.WriteString(fmt.Sprintf("the output result: %s\n", result))
-	msg := builder.String()
-	fmt.Println(msg)
+	builder.WriteString(fmt.Sprintf("- the output result with string.builder: %s\n", result))
+	output1 := builder.String()
 
 	// concate with fmt.sprintf
-	output := fmt.Sprintf("the output result: %s", result)
-	fmt.Println(output)
+	output2 := fmt.Sprintf("- the output result with fmt.sprintf: %s", result)
+
+	fmt.Println(output1)
+	fmt.Println(output2)
 
 }
 
@@ -33,8 +34,7 @@ func concateString(plainText string, builder strings.Builder) (result string) {
 	joinStr := []string{}
 	for k, v := range textMap {
 		b := builder
-		length := len(v)
-		b.WriteString(fmt.Sprintf("%d%s", length, k))
+		b.WriteString(fmt.Sprintf("%d%s", len(v), k))
 		joinStr = append(joinStr, b.String())
 	}
 	result = strings.Join(joinStr, "")
