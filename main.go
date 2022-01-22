@@ -7,11 +7,14 @@ import (
 
 func main() {
 	plainText := "SISKAEEE"
-	result := concateString(plainText)
-	fmt.Println(result)
+	builder := strings.Builder{}
+	result := concateString(plainText, builder)
+	builder.WriteString(fmt.Sprintf("the output result: %s", result))
+	msg := builder.String()
+	fmt.Println(msg)
 }
 
-func concateString(plainText string) (result string) {
+func concateString(plainText string, builder strings.Builder) (result string) {
 	textMap := map[string][]string{}
 	for _, p := range plainText {
 		if _, exist := textMap[string(p)]; !exist {
@@ -22,9 +25,10 @@ func concateString(plainText string) (result string) {
 
 	joinStr := []string{}
 	for k, v := range textMap {
+		b := builder
 		length := len(v)
-		preOutput := fmt.Sprintf("%d%s", length, k)
-		joinStr = append(joinStr, preOutput)
+		b.WriteString(fmt.Sprintf("%d%s", length, k))
+		joinStr = append(joinStr, b.String())
 	}
 	result = strings.Join(joinStr, "")
 	return
