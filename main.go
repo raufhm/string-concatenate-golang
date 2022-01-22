@@ -37,6 +37,17 @@ func concateString(plainText string, builder strings.Builder) (result string) {
 		b.WriteString(fmt.Sprintf("%d%s", len(v), k))
 		joinStr = append(joinStr, b.String())
 	}
+
+	/*
+		* or instead of using string.builder,
+		* you may simply utilize fmt.sprintf will do
+
+			for k, v := range textMap {
+				preOutput := fmt.Sprintf("%d%s", len(v), k))
+				joinStr = append(joinStr, preOutput)
+			}
+	*/
+
 	result = strings.Join(joinStr, "")
 	return
 }
