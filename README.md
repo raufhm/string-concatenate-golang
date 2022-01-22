@@ -9,7 +9,7 @@
 
     - run ```go run main.go``` to execute the script
         
-    - code will map the value inside to count each character and concate the total_character + character
+    - code will map the value inside to count each character and concat the total_character + character
         
     - ```2S1I1K1A3E``` is the sample output (ps: output value can be random)
 
