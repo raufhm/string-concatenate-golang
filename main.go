@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	plainText := "SISKAEEE"
+	plainText := "RONALDO"
 	builder := strings.Builder{}
 	result := concateString(plainText, builder)
 

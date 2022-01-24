@@ -5,12 +5,12 @@
 ### 2. replace ```plainText``` value with string value you'd expect to be concatenated.
    
 -   example:
-    - ```plainText := SISKAEEE``` string data input
+    - ```plainText := RONALDO``` string data input
 
     - run ```go run main.go``` to execute the script
         
     - code will map the value inside to count each character and concat the total_character + character
         
-    - ```2S1I1K1A3E``` is the sample output (ps: output value can be random)
+    - ```1R2O1N1A1L1D``` is the sample output (ps: output value can be random)
 
 
