@@ -1,4 +1,4 @@
-# string-concat
+# string concatenate with Go
 
 ### 1. clone the project and extract into your go path
 
